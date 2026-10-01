@@ -1,0 +1,15 @@
+{
+  "name": "obsidian-fox-suite",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Seven Nightfox-family palettes in one offline Obsidian theme.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "check": "node scripts/build.mjs --check && node --test",
+    "package": "node scripts/build.mjs --package"
+  }
+}

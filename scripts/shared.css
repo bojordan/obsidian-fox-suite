@@ -1,0 +1,65 @@
+/* @settings
+name: Fox Suite
+id: fox-suite
+settings:
+  - id: fox-light-palette
+    title: Light palette
+    type: class-select
+    allowEmpty: false
+    default: fox-light-dayfox
+    options:
+      - label: Dayfox
+        value: fox-light-dayfox
+      - label: Dawnfox
+        value: fox-light-dawnfox
+  - id: fox-dark-palette
+    title: Dark palette
+    type: class-select
+    allowEmpty: false
+    default: fox-dark-nightfox
+    options:
+      - label: Nightfox
+        value: fox-dark-nightfox
+      - label: Duskfox
+        value: fox-dark-duskfox
+      - label: Nordfox
+        value: fox-dark-nordfox
+      - label: Terafox
+        value: fox-dark-terafox
+      - label: Carbonfox
+        value: fox-dark-carbonfox
+*/
+
+body {
+  --font-interface-theme: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  --font-text-theme: var(--font-interface-theme);
+  --font-monospace-theme: "Monaspace Neon", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --fox-display-font: "Mona Sans", var(--font-interface, var(--font-interface-theme));
+  --h1-font: var(--fox-display-font);
+  --h2-font: var(--fox-display-font);
+  --h3-font: var(--fox-display-font);
+  --h4-font: var(--fox-display-font);
+  --h5-font: var(--fox-display-font);
+  --h6-font: var(--fox-display-font);
+  --inline-title-font: var(--fox-display-font);
+  --h1-weight: 500;
+  --h2-weight: 500;
+  --h3-weight: 500;
+  --inline-title-weight: 500;
+  --line-height-normal: 1.5;
+  --code-size: 0.9em;
+}
+
+body ::selection {
+  color: var(--fox-selection-foreground);
+}
+
+.token.variable,
+.cm-variableName {
+  color: var(--fox-syntax-variable);
+}
+
+.token.regex,
+.cm-regexp {
+  color: var(--fox-syntax-regexp);
+}

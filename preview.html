@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fox Suite palette preview</title>
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 16px/1.5 var(--font-text-theme); background: var(--background-primary); color: var(--text-normal); }
+    header { height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; background: var(--background-secondary); border-bottom: 1px solid var(--background-modifier-border); }
+    header strong { font-weight: 600; }
+    select { font: inherit; color: var(--text-normal); background: var(--interactive-normal); border: 1px solid var(--background-modifier-border); border-radius: 4px; padding: 4px 8px; }
+    .layout { display: grid; grid-template-columns: 220px 1fr; min-height: calc(100vh - 56px); }
+    aside { padding: 24px 16px; background: var(--background-secondary); border-right: 1px solid var(--background-modifier-border); color: var(--text-muted); }
+    aside div { padding: 7px 12px; }
+    aside .active { background: var(--nav-item-background-active); color: var(--text-normal); border-radius: 4px; }
+    main { padding: 32px 44px; max-width: 900px; }
+    h1 { font: 500 32px/1.4 var(--fox-display-font); margin: 0 0 12px; }
+    p { margin: 0 0 20px; }
+    a { color: var(--link-color); }
+    pre { padding: 18px 22px; background: var(--background-secondary); border: 1px solid var(--background-modifier-border); border-radius: 6px; margin: 20px 0; font: 14px/1.7 var(--font-monospace-theme); }
+    .comment { color: var(--code-comment); } .keyword { color: var(--code-keyword); } .string { color: var(--code-string); } .function { color: var(--code-function); }
+    .swatches { display: flex; gap: 8px; margin: 20px 0 12px; }
+    .swatches span { width: 32px; height: 20px; background: var(--swatch); border-radius: 3px; }
+    small { color: var(--text-muted); }
+    @media (max-width: 640px) { .layout { grid-template-columns: 1fr; } aside { display: none; } main { padding: 24px; } }
+  </style>
+</head>
+<body class="theme-light">
+  <header><strong>Fox Suite</strong><label>Palette <select id="palette">
+    <option value="dayfox">Dayfox</option><option value="dawnfox">Dawnfox</option>
+    <option value="nightfox">Nightfox</option><option value="duskfox">Duskfox</option>
+    <option value="nordfox">Nordfox</option><option value="terafox">Terafox</option>
+    <option value="carbonfox">Carbonfox</option>
+  </select></label></header>
+  <div class="layout"><aside><div>Notebook</div><div class="active">Welcome</div><div>Daily notes</div><div>Ideas</div><div>Reference</div></aside>
+  <main>
+    <h1>Room for your thoughts.</h1>
+    <p>Seven Fox palettes for reading, writing, and code.<br>Quiet surfaces, clear text, and <a href="https://github.com/EdenEast/nightfox.nvim">the original Nightfox colors</a>.</p>
+    <pre><span class="comment">// A little color, a little clarity.</span>
+<span class="keyword">const</span> theme = <span class="string">"Fox Suite"</span>;
+<span class="keyword">function</span> <span class="function">makeSpace</span>(idea) {
+  <span class="keyword">return</span> { theme, idea };
+}</pre>
+    <div class="swatches" aria-label="Palette accent colors">
+      <span style="--swatch:var(--color-red)"></span><span style="--swatch:var(--color-orange)"></span><span style="--swatch:var(--color-yellow)"></span><span style="--swatch:var(--color-green)"></span><span style="--swatch:var(--color-cyan)"></span><span style="--swatch:var(--color-blue)"></span><span style="--swatch:var(--color-purple)"></span>
+    </div>
+    <small>Independent Obsidian port. MIT palettes. OFL fonts. Fully offline.</small>
+  </main></div>
+  <script>
+    const select = document.querySelector("#palette");
+    const apply = name => {
+      const mode = ["dayfox", "dawnfox"].includes(name) ? "light" : "dark";
+      document.body.className = `theme-${mode} fox-${mode}-${name}`;
+      select.value = name;
+    };
+    select.addEventListener("change", event => apply(event.target.value));
+    // Open a specific palette with preview.html#nordfox.
+    const requested = location.hash.slice(1);
+    if ([...select.options].some(option => option.value === requested)) apply(requested);
+  </script>
+</body>
+</html>

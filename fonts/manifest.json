@@ -1,0 +1,44 @@
+[
+  {
+    "file": "monaspace-neon-italic.woff2",
+    "family": "Monaspace Neon",
+    "weight": 400,
+    "italic": true,
+    "sha256": "eb1028b1f01be896737440d7fd889ea63a367aa920c3e708af26b1a4fe6a09c9"
+  },
+  {
+    "file": "monaspace-neon-bold.woff2",
+    "family": "Monaspace Neon",
+    "weight": 700,
+    "italic": false,
+    "sha256": "b36e51d63efd08d44a67895506a58ed3abc147c56415043d4f060471daee30f7"
+  },
+  {
+    "file": "monaspace-neon-semibold.woff2",
+    "family": "Monaspace Neon",
+    "weight": 600,
+    "italic": false,
+    "sha256": "8331226e8f74e9fb952b377e1290950eaa9bc265ef15f0b001f9ad1426520292"
+  },
+  {
+    "file": "monaspace-neon-regular.woff2",
+    "family": "Monaspace Neon",
+    "weight": 400,
+    "italic": false,
+    "sha256": "d90b15f2bab28d1ee0b11a3e45ab2b3b5f1d0ca898ae047ab40172d25730343c"
+  },
+  {
+    "file": "monaspace-neon-medium.woff2",
+    "family": "Monaspace Neon",
+    "weight": 500,
+    "italic": false,
+    "sha256": "bb628a5c373ee82e6ab01ae7a30112ee9384f8c53d68bfa0cafc8a08f88f7127"
+  },
+  {
+    "file": "mona-sans-medium.woff2",
+    "family": "Mona Sans",
+    "weight": 500,
+    "italic": false,
+    "sha256": "c9b1217415bd5380e22e34bff496129e1049e87702201ade5a1534ae13c294bb"
+  }
+]
