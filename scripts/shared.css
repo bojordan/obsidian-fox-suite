@@ -12,6 +12,8 @@ settings:
         value: fox-light-dayfox
       - label: Dawnfox
         value: fox-light-dawnfox
+      - label: Pilotfox
+        value: fox-light-pilotfox
   - id: fox-dark-palette
     title: Dark palette
     type: class-select
@@ -62,4 +64,33 @@ body ::selection {
 .token.regex,
 .cm-regexp {
   color: var(--fox-syntax-regexp);
+}
+
+body.theme-light.fox-light-pilotfox button.mod-cta {
+  background-color: var(--fox-button-primary);
+  color: var(--fox-button-primary-text);
+  box-shadow: inset 0 0 0 1px var(--fox-button-primary-border);
+}
+
+body.theme-light.fox-light-pilotfox button.mod-cta:hover:not(:disabled) {
+  background-color: var(--fox-button-primary-hover);
+}
+
+body.theme-light.fox-light-pilotfox button.mod-cta:active:not(:disabled) {
+  background-color: var(--fox-button-primary-active);
+}
+
+body.theme-light.fox-light-pilotfox button.mod-cta:disabled {
+  background-color: var(--fox-button-disabled);
+  color: var(--fox-button-disabled-text);
+}
+
+body.theme-light.fox-light-pilotfox .markdown-rendered :not(pre) > code,
+body.theme-light.fox-light-pilotfox .markdown-source-view.mod-cm6 .cm-inline-code {
+  font-size: var(--fox-inline-code-size);
+}
+
+body.theme-light.fox-light-pilotfox .markdown-rendered pre,
+body.theme-light.fox-light-pilotfox .markdown-source-view.mod-cm6 .HyperMD-codeblock {
+  line-height: var(--fox-code-line-height);
 }

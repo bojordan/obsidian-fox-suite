@@ -29,7 +29,7 @@
 </head>
 <body class="theme-light">
   <header><strong>Fox Suite</strong><label>Palette <select id="palette">
-    <option value="dayfox">Dayfox</option><option value="dawnfox">Dawnfox</option>
+    <option value="dayfox">Dayfox</option><option value="dawnfox">Dawnfox</option><option value="pilotfox">Pilotfox</option>
     <option value="nightfox">Nightfox</option><option value="duskfox">Duskfox</option>
     <option value="nordfox">Nordfox</option><option value="terafox">Terafox</option>
     <option value="carbonfox">Carbonfox</option>
@@ -37,7 +37,7 @@
   <div class="layout"><aside><div>Notebook</div><div class="active">Welcome</div><div>Daily notes</div><div>Ideas</div><div>Reference</div></aside>
   <main>
     <h1>Room for your thoughts.</h1>
-    <p>Seven Fox palettes for reading, writing, and code.<br>Quiet surfaces, clear text, and <a href="https://github.com/EdenEast/nightfox.nvim">the original Nightfox colors</a>.</p>
+    <p>Eight Fox palettes for reading, writing, and code.<br>Quiet surfaces, clear text, and <a href="https://github.com/EdenEast/nightfox.nvim">the original Nightfox colors</a>.</p>
     <pre><span class="comment">// A little color, a little clarity.</span>
 <span class="keyword">const</span> theme = <span class="string">"Fox Suite"</span>;
 <span class="keyword">function</span> <span class="function">makeSpace</span>(idea) {
@@ -51,7 +51,7 @@
   <script>
     const select = document.querySelector("#palette");
     const apply = name => {
-      const mode = ["dayfox", "dawnfox"].includes(name) ? "light" : "dark";
+      const mode = ["dayfox", "dawnfox", "pilotfox"].includes(name) ? "light" : "dark";
       document.body.className = `theme-${mode} fox-${mode}-${name}`;
       select.value = name;
     };
