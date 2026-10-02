@@ -31,10 +31,9 @@ Mona Sans headings.
 | **Carbonfox** | |
 | ![Carbonfox palette preview](screenshots/carbonfox.png) | |
 
-The theme works without plugins: Light uses Dayfox and Dark uses Nightfox.
-To select the others, install the optional **Style Settings** community plugin,
-then open **Settings -> Style Settings -> Fox Suite**. The light and dark
-choices are independent; Obsidian's base color scheme chooses which is active.
+Without any plugins, Light uses Dayfox and Dark uses Nightfox. To select any
+other palette, use the free **Style Settings** community plugin; see
+[Choose a palette](#choose-a-palette).
 The Nightfox palettes do not override your reading width or configured body
 text size. Pilotfox also applies its captured font stacks, type sizes, and
 line heights.
@@ -51,6 +50,25 @@ Fonts and their licenses are embedded; no network requests are needed.
 If you previously used a standalone `copilot-fox` CSS snippet, disable it and
 choose **Pilotfox** instead; otherwise its overrides will still win over
 every light palette.
+
+## Choose a palette
+
+Fox Suite has no palette menu of its own. Palettes are chosen with the
+[Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
+community plugin, which reads the options the theme declares:
+
+1. Open **Settings -> Community plugins** and turn on community plugins if
+   Obsidian asks.
+2. Select **Browse**, search for **Style Settings**, then install and enable it.
+3. Open **Settings -> Style Settings -> Fox Suite**.
+4. Pick a **Light palette** (Dayfox, Dawnfox, or Pilotfox) and a **Dark
+   palette** (Nightfox, Duskfox, Nordfox, Terafox, or Carbonfox).
+
+The two choices are saved independently. Obsidian's base color scheme
+(**Settings -> Appearance -> Base color scheme**) decides which one is shown,
+so you can, for example, use Pilotfox by day and Nordfox at night. Changes
+apply immediately. If you disable Style Settings, the theme returns to Dayfox
+and Nightfox.
 
 ## Pilotfox versus upstream Dayfox
 
