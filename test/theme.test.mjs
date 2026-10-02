@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { names, root, loadPalettes, parsePalette, variables, blend, brighten } from "../scripts/palettes.mjs";
+import { names, root, loadPalettes, parsePalette, variables, blend, brighten, pilotfox, loadPilotfox } from "../scripts/palettes.mjs";
 import { generate } from "../scripts/build.mjs";
 
 const palettes = await loadPalettes();
@@ -50,6 +50,21 @@ test("stylesheet is self-contained and licensed", async () => {
   assert.match(css, /body\.theme-light,\nbody\.theme-light\.fox-light-dayfox/);
   assert.match(css, /body\.theme-dark,\nbody\.theme-dark\.fox-dark-nightfox/);
   for (const p of palettes) assert.ok(css.includes(`body.theme-${p.light ? "light" : "dark"}.fox-${p.light ? "light" : "dark"}-${p.name}`));
+});
+
+test("Pilotfox layers the captured values over upstream Dayfox", async () => {
+  const captured = await loadPilotfox();
+  const dayfox = variables(palettes.find(p => p.name === pilotfox.base));
+  const css = await generate();
+  const block = css.match(/\nbody\.theme-light\.fox-light-pilotfox \{\n([\s\S]*?)\n\}/)?.[1];
+  assert.ok(block, "Pilotfox rule is generated");
+  const declared = Object.fromEntries(block.split("\n").map(line => line.trim().match(/^(--[a-z0-9-]+): (.*);$/).slice(1)));
+  assert.deepEqual(declared, { ...dayfox, ...captured });
+  assert.equal(declared["--background-secondary"], "#f1e9e7");
+  assert.equal(declared["--text-muted"], "#685887");
+  assert.equal(declared["--background-primary"], backgrounds.dayfox);
+  assert.match(css, /value: fox-light-pilotfox/);
+  assert.match(css, /body\.theme-light\.fox-light-pilotfox button\.mod-cta \{/);
 });
 
 test("manifest and package versions agree", async () => {

@@ -45,5 +45,14 @@ subsetting, or renaming them is permitted without following the OFL, including
 its reserved-font-name conditions. No Segoe UI or other system font binaries
 are redistributed; CSS only references installed fallbacks.
 
+## Pilotfox appearance measurements
+
+The **Pilotfox** variant uses 236 CSS values measured from the GitHub Copilot
+App 1.1.25 Dayfox appearance, stored as data in `palettes/pilotfox.json` and
+layered over upstream Dayfox. No Copilot application source code, assets,
+account data, or logos are included.
+The project's MIT license covers this project's own code and mappings, not
+GitHub's application.
+
 Fox Suite is an independent project, not an official GitHub, Obsidian, or
 Nightfox-author product. Upstream names are used for identification and credit.

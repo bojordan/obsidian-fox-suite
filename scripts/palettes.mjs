@@ -125,3 +125,16 @@ export function variables({ light, palette: p, syntax: s, diagnostics: d }) {
   set("normal", "callout-blend-mode");
   return v;
 }
+
+export const pilotfox = { name: "pilotfox", label: "Pilotfox", base: "dayfox" };
+export const variantNames = [...names.slice(0, 2), pilotfox.name, ...names.slice(2)];
+
+export async function loadPilotfox() {
+  const values = JSON.parse((await readFile(path.join(root, "palettes", `${pilotfox.name}.json`), "utf8")).replace(/^\uFEFF/, ""));
+  for (const [key, value] of Object.entries(values)) {
+    if (!/^--[a-z0-9-]+$/.test(key) || typeof value !== "string" || !value || /[{};]|url\s*\(/i.test(value)) {
+      throw new Error(`Invalid ${pilotfox.name} value: ${key}`);
+    }
+  }
+  return values;
+}
